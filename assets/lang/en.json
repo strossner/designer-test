@@ -1,0 +1,34 @@
+{
+  "en": {
+    "color": "Color",
+    "motive": "Motive",
+    "headlines": {
+      "index": "Design your Shirt",
+      "checkout": "Checkout",
+      "about": "This is a demo page",
+      "aboutTitle": "About this Project",
+      "success": "Order success",
+      "order": "Thank you for your order"
+    },
+    "buttons": {
+      "checkout": "Go to checkout",
+      "back": "Back",
+      "buy": "Buy",
+      "new": "Design another product",
+      "about": "About this Project"
+    },
+    "checkout": {
+      "receipt": "Order Data",
+      "total": "Total",
+      "form": {
+        "headline": "Personal Data",
+        "name": "Name",
+        "address": "Address",
+        "placeholder": {
+          "name": "Enter your Name",
+          "address": "Enter your Address"
+        }
+      }
+    }
+  }
+}

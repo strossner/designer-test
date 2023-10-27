@@ -7,19 +7,74 @@
     "dev": "nuxt dev --port=3023",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint:js": "eslint --fix --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.1.0",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt": "^3.7.3"
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "nuxt": "^3.7.3",
+    "nuxt-lodash": "^2.5.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "overrides": {
     "vue": "latest"
   },
   "dependencies": {
+    "@nuxt/image": "^1.0.0",
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.6"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:nuxt/recommended",
+      "plugin:vue/vue3-recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "parser": "@typescript-eslint/parser",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "vue/no-v-html": "off",
+      "camelcase": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "vue/multi-word-component-names": "off",
+      "vue/valid-template-root": "off",
+      "vue/require-default-prop": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
   }
 }
