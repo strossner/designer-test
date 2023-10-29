@@ -25,11 +25,11 @@
                 <p>{{ $t('color') }}:</p>
                 <p class="text-right">{{ formatCurrency(color.price) }}</p>
               </div>
-              <div class="absolute bottom-5">
+              <div class="absolute bottom-5 w-full pr-10">
                 <hr />
-                <div class="grid grid-cols-2 gap-2 font-bold text-xl">
+                <div class="flex gap-2 font-bold text-xl">
                   <p>{{ $t('checkout.total') }}</p>
-                  <p class="text-right">{{ formatCurrency(motive.price + color.price) }}</p>
+                  <p class="flex-1 text-right">{{ formatCurrency(motive.price + color.price) }}</p>
                 </div>
               </div>
             </div>
