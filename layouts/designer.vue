@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="md:fixed md:top-0 w-full">
+    <div class="container md:h-screen mx-auto py-32">
+      <NuxtPage :page-key="(route) => route.fullPath" />
+    </div>
+    <div class="fixed top-0 w-full">
       <Header>
         <template #left-side>
           <Headline class="text-green-500 flex">{{ $t('headlines.index') }}</Headline>
@@ -14,10 +17,7 @@
         </template>
       </Header>
     </div>
-    <div class="container md:h-screen mx-auto py-5">
-      <NuxtPage :page-key="(route) => route.fullPath" />
-    </div>
-    <div class="md:fixed md:bottom-0 w-full">
+    <div class="fixed bottom-0 w-full">
       <Footer />
     </div>
   </div>

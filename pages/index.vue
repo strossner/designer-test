@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap h-full gap-5 md:gap-0">
     <div class="flex md:block m-auto w-full order-2 md:w-1/3">
-      <Card class="flex md:block h-48 lg:w-60 lg:h-1/2">
+      <Card class="flex md:block h-full py-5 lg:w-60 lg:h-1/2">
         <Arrow class="m-auto lg:py-2" backward @click="selectPrevious('motive')" />
         <div
           v-for="motive in motives.slice(currentIndex.motive.current, currentIndex.motive.last)"
@@ -19,7 +19,7 @@
       </Card>
     </div>
     <div class="w-full m-auto order-1 md:order-2 md:w-1/3">
-      <Svg :color="selectedItem.color.color" :picture="selectedItem.motive.img">
+      <Svg class="w-full h-full" :color="selectedItem.color.color" :picture="selectedItem.motive.img">
         <template #picture>
           <div class="absolute top-1/3 bottom-0 left-0 right-0">
             <NuxtImg v-if="selectedItem.motive.img" class="mx-auto w-20" :src="selectedItem.motive.img" />
@@ -28,7 +28,7 @@
       </Svg>
     </div>
     <div class="flex md:block w-full m-auto order-3 md:order-3 md:w-1/3 md:space-y-5">
-      <Card class="flex md:block h-48 lg:w-60 lg:h-1/2">
+      <Card class="flex md:block h-full py-5 lg:w-60 lg:h-1/2">
         <Arrow class="m-auto lg:py-2" backward @click="selectPrevious('color')" />
         <div
           v-for="color in colors.slice(currentIndex.color.current, currentIndex.color.last)"

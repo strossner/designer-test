@@ -1,6 +1,13 @@
 <template>
   <div class="h-screen">
-    <div class="lg:fixed lg:top-0 w-full">
+    <div class="container lg:h-screen mx-auto">
+      <div class="flex h-full">
+        <div class="w-full m-auto py-32">
+          <NuxtPage :page-key="(route) => route.fullPath" @title="handleHeadline" />
+        </div>
+      </div>
+    </div>
+    <div class="fixed top-0 w-full">
       <Header>
         <template #left-side>
           <Headline class="flex text-green-500">{{ headline }}</Headline>
@@ -10,14 +17,7 @@
         </template>
       </Header>
     </div>
-    <div class="container lg:h-screen mx-auto">
-      <div class="flex h-full">
-        <div class="w-full m-auto">
-          <NuxtPage :page-key="(route) => route.fullPath" @title="handleHeadline" />
-        </div>
-      </div>
-    </div>
-    <div class="lg:fixed lg:bottom-0 w-full">
+    <div class="fixed bottom-0 w-full">
       <Footer />
     </div>
   </div>
